@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Fornecedor</title>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="date"] {
+    width: calc(100% - 24px);
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    .form-group label {
+        font-size: 16px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Cadastro de Fornecedor</h2>
+    <form id="cadastroForm">
+        <div class="form-group">
+            <label for="nomeFornecedor">Nome do Fornecedor:</label>
+            <input type="text" id="nomeFornecedor" name="nomeFornecedor" required>
+        </div>
+        <div class="form-group">
+            <label for="dataEmissao">Data da Emissão:</label>
+            <input type="date" id="dataEmissao" name="dataEmissao" required>
+        </div>
+        <div class="form-group">
+            <label for="previsaoEntrega">Previsão de Entrega:</label>
+            <input type="date" id="previsaoEntrega" name="previsaoEntrega" required>
+        </div>
+        <div class="form-group">
+            <label for="dataRecebimento">Data de Recebimento:</label>
+            <input type="date" id="dataRecebimento" name="dataRecebimento">
+        </div>
+        <div class="form-group">
+            <label for="condicoesPagamento">Condições de Pagamento:</label>
+            <select id="condicoesPagamento" name="condicoesPagamento">
+                <option value="">Selecione...</option>
+                <option value="À vista">À vista</option>
+                <option value="Cartão de crédito">Cartão de crédito</option>
+				<option value="Cartão de débito">Cartão de débito</option>
+                <option value="Boleto">Boleto</option>
+                <option value="Pix">Pix</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="devolucao">Devolução:</label>
+            <select id="devolucao" name="devolucao">
+                <option value="">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="valorTotal">Valor Total:</label>
+            <input type="number" id="valorTotal" name="valorTotal" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="valorComDesconto">Valor com Desconto:</label>
+            <input type="number" id="valorComDesconto" name="valorComDesconto" step="0.01">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Cadastrar">
+        </div>
+    </form>
+</div>
+
+<script>
+    // Script para capturar os dados do formulário
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Capturar os valores dos campos
+        let nomeFornecedor = document.getElementById('nomeFornecedor').value;
+        let dataEmissao = document.getElementById('dataEmissao').value;
+        let previsaoEntrega = document.getElementById('previsaoEntrega').value;
+        let dataRecebimento = document.getElementById('dataRecebimento').value;
+        let condicoesPagamento = document.getElementById('condicoesPagamento').value;
+        let devolucao = document.getElementById('devolucao').value;
+        let valorTotal = document.getElementById('valorTotal').value;
+        let valorComDesconto = document.getElementById('valorComDesconto').value;
+        
+        // Exibir os valores no console (pode ser substituído por outra lógica de processamento)
+        console.log('Nome do Fornecedor:', nomeFornecedor);
+        console.log('Data da Emissão:', dataEmissao);
+        console.log('Previsão de Entrega:', previsaoEntrega);
+        console.log('Data de Recebimento:', dataRecebimento);
+        console.log('Condições de Pagamento:', condicoesPagamento);
+        console.log('Devolução:', devolucao);
+        console.log('Valor Total:', valorTotal);
+        console.log('Valor com Desconto:', valorComDesconto);
+        
+        // Aqui você pode adicionar lógica para enviar os dados para um servidor, armazenar localmente, etc.
+        
+        // Limpar o formulário após o envio (opcional)
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
