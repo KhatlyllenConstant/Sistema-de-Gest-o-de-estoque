@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Ordens de Compra</title>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="date"] {
+    width: calc(100% - 24px);
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    .form-group label {
+        font-size: 16px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Cadastro de Ordens de Compra</h2>
+    <form id="cadastroForm">
+        <div class="form-group">
+            <label for="nomeEmpresa">Nome da Empresa:</label>
+            <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
+        </div>
+        <div class="form-group">
+            <label for="cnpjFornecedor">CNPJ do Fornecedor:</label>
+            <input type="text" id="cnpjFornecedor" name="cnpjFornecedor" required>
+        </div>
+        <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="condicoesPagamento">Condição de Pagamento:</label>
+            <select id="condicoesPagamento" name="condicoesPagamento">
+                <option value="">Selecione...</option>
+                <option value="À vista">À vista</option>
+                <option value="Cartão de crédito">Cartão de crédito</option>
+                <option value="Boleto">Boleto</option>
+                <option value="Pix">Pix</option>
+                <option value="Cartão de débito">Cartão de débito</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="enderecoEntrega">Endereço de Entrega:</label>
+            <input type="text" id="enderecoEntrega" name="enderecoEntrega" required>
+        </div>
+        <div class="form-group">
+            <label for="numeroOrdemCompra">Número da Ordem de Compra:</label>
+            <input type="text" id="numeroOrdemCompra" name="numeroOrdemCompra" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Cadastrar">
+        </div>
+    </form>
+</div>
+
+<script>
+    // Script para capturar os dados do formulário
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Capturar os valores dos campos
+        let nomeEmpresa = document.getElementById('nomeEmpresa').value;
+        let cnpjFornecedor = document.getElementById('cnpjFornecedor').value;
+        let data = document.getElementById('data').value;
+        let descricao = document.getElementById('descricao').value;
+        let condicoesPagamento = document.getElementById('condicoesPagamento').value;
+        let enderecoEntrega = document.getElementById('enderecoEntrega').value;
+        let numeroOrdemCompra = document.getElementById('numeroOrdemCompra').value;
+        
+        // Exibir os valores no console (pode ser substituído por outra lógica de processamento)
+        console.log('Nome da Empresa:', nomeEmpresa);
+        console.log('CNPJ do Fornecedor:', cnpjFornecedor);
+        console.log('Data:', data);
+        console.log('Descrição:', descricao);
+        console.log('Condição de Pagamento:', condicoesPagamento);
+        console.log('Endereço de Entrega:', enderecoEntrega);
+        console.log('Número da Ordem de Compra:', numeroOrdemCompra);
+        
+        // Aqui você pode adicionar lógica para enviar os dados para um servidor, armazenar localmente, etc.
+        
+        // Limpar o formulário após o envio (opcional)
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
