@@ -1,0 +1,377 @@
+<!DOCTYPE html>  
+
+  
+
+<html lang="en">  
+
+  
+
+<head>  
+
+  
+
+  <meta charset="UTF-8">  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+  
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+
+  
+
+  <title>Sistema de Gestão de Estoque</title>  
+
+  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+
+  
+
+  <style>  
+
+  
+
+    body {  
+
+  
+
+      background-color: #f8f9fa;  
+
+  
+
+    }  
+
+  
+
+    .card {  
+
+  
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);  
+
+  
+
+      transition: 0.3s;  
+
+  
+
+    }  
+
+  
+
+    .card:hover {  
+
+  
+
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);  
+
+  
+
+    }  
+
+  
+
+  </style>  
+
+  
+
+</head>  
+
+  
+
+<body>  
+
+  
+
+   
+
+  
+
+  <!-- Main Content -->  
+
+  
+
+  <div class="container my-5">  
+
+  
+
+    <h1 class="text-center mb-4">Sistema de Gestão de Estoque</h1>  
+
+  
+
+    <div class="row">  
+
+  
+
+      <!-- Cadastro de Produto -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Cadastro de Produto</h5>  
+
+  
+
+          <p class="card-text">Adicione novos produtos ao seu estoque.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('cadastrar_produto.html')">Cadastrar Produto</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+  <!-- Cadastro de Fornecedores -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Cadastro de Fornecedores </h5>  
+
+  
+
+          <p class="card-text">Adicione fornecedores.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('cadastrar_fornecedores.html')">Cadastrar Fornecedores</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+  <!-- Cadastro de Ordens de Compra -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Cadastro de Ordens de Compra </h5>  
+
+  
+
+          <p class="card-text">Adicione novos produtos ao seu estoque.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('cadastrar_ordens_compra.html')">Cadastrar Ordens de Compra</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+      <!-- Entrada de Produtos -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Entrada de Produtos</h5>  
+
+  
+
+          <p class="card-text">Registre a entrada de novos produtos no estoque.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('entrada_produtos.html')">Registrar Entrada</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+      <!-- Saída de Produtos -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Saída de Produtos</h5>  
+
+  
+
+          <p class="card-text">Registre a saída de produtos do estoque.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('saida_produtos.html')">Registrar Saída</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+      <!-- Relatório -->  
+
+  
+
+      <div class="col-md-6">  
+
+  
+
+        <div class="card p-3">  
+
+  
+
+          <h5 class="card-title">Relatório</h5>  
+
+  
+
+          <p class="card-text">Visualize relatórios detalhados do seu estoque.</p>  
+
+  
+
+          <a href="#" class="btn btn-primary" onclick="redirectTo('visualizar_relatorio.html')">Visualizar Relatório</a>  
+
+  
+
+        </div>  
+
+  
+
+      </div>  
+
+  
+
+    </div>  
+
+  
+
+  </div>  
+
+  
+
+   
+
+  
+
+  <!-- Footer -->  
+
+  
+
+  <footer class="bg-light py-3">  
+
+  
+
+    <div class="container">  
+
+  
+
+       
+
+  
+
+    </div>  
+
+  
+
+  </footer>  
+
+  
+
+   
+
+  
+
+  <script>  
+
+  
+
+    function redirectTo(url) {  
+
+  
+
+      window.location.href = url;  
+
+  
+
+    }  
+
+  
+
+  </script>  
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>  
+
+  
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+
+  
+
+</body>  
+
+  
+
+</html> 
